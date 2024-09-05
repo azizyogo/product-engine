@@ -1,0 +1,15 @@
+[
+    {
+      "insert": "users",
+      "documents": [
+        {
+          "username": "samsung.official",
+          "password": "pwd000"
+        },
+        {
+          "username": "hobby.store",
+          "password": "pwd111"
+        }
+      ]
+    }
+  ]

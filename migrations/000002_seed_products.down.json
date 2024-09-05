@@ -1,0 +1,6 @@
+[
+    {
+      "delete": "products",
+      "deletes": [ { "q": {}, "limit": 0 } ]
+    }
+]
