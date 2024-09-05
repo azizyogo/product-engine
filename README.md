@@ -38,7 +38,16 @@ cp .env.example .env.yaml
 make docker-run
 ```
 
-4. Run Migration *excute this command twice to run migrations file in directory ./migrations
+4. Run Migration for users seed
+
+```bash
+make migrate-up
+```
+
+5. Run Migration for products seed 
+
+__*Notes:__
+Before executing this command, please fill in the __"user_id"__ field in _./migrations/000002_seed_products.up_ first. Check the __user__ collection in MongoDB to retrieve the user_id. Then run the command below.
 
 ```bash
 make migrate-up
@@ -154,18 +163,4 @@ error:
 
 command to fix:
     go install -tags "mongodb" github.com/golang-migrate/migrate/v4/cmd/migrate@latest
-```
-
-- if you want to make another migration file, you can run this command:
-```
-make create-migration name=YOUR_MIGRATION_NAME
-```
-
-- if you want to execute your migration file or undo the migration (we call it migrate up and down), you can run this command:
-```
-up:
-    make migrate-up
-    
-down:
-    make migrate-down
 ```
