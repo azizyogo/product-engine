@@ -44,8 +44,17 @@ make docker-run
 make migrate-up
 ```
 
-## CURL
+## API Documentation
 
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST   | /login   | Login to obtain an access token. This endpoint should belong to user-related services, but it's currently used solely to retrieve the token for accessing the Product Management endpoints |
+| GET    | /product | Get product details by product id |
+| POST   | /product | Create new product |
+| DELETE | /product/{product id} | Delete product by product id |
+| PUT    | /product | Update product |
+
+### CURL
 - Login
 ```
 curl --location 'localhost:8080/login' \
@@ -124,19 +133,39 @@ curl --location --request PUT 'localhost:8080/product' \
 
 ## Testing Guides
 
-### Product Management
-Since this featues meant to user / store to manage their product, you have to login first.
+Since Product Management featues meant to users / stores to manage their product, you have to login on their account first.
 
 1. Login to get access token
 2. Put token in Authorization header of each Product Management endpoints
 
 ## Notes
 
-if you encounter this kind of error when doing migration up
+### Migration
+
+- Ensure you have go-migrate installed. If not, you can install it with:
 ```
-error: database driver: unknown driver mongodb (forgotten import?)
+go install github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 ```
-run this command
+
+- If you encounter this kind of error when doing migration up, you can run this command:
 ```
-go install -tags "mongodb" github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+error:
+    error: database driver: unknown driver mongodb (forgotten import?)
+
+command to fix:
+    go install -tags "mongodb" github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+```
+
+- if you want to make another migration file, you can run this command:
+```
+make create-migration name=YOUR_MIGRATION_NAME
+```
+
+- if you want to execute your migration file or undo the migration (we call it migrate up and down), you can run this command:
+```
+up:
+    make migrate-up
+    
+down:
+    make migrate-down
 ```
