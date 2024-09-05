@@ -1,0 +1,61 @@
+[
+    {
+      "insert": "products",
+      "documents": [
+        {
+          "user_id": "",
+          "name": "Samsung Z Flip 6",
+          "category": "",
+          "condition": 1,
+          "desc": "the newest flip phone from samsung",
+          "price": 15000000,
+          "status": 1,
+          "stock": 100,
+          "specifications": [
+            {
+              "Brand": "Samsung"
+            },
+            {
+              "Warranty": "SEIN"
+            }
+          ]
+        },
+        {
+          "user_id": "",
+          "name": "Samsung Galaxy S24 Ultra",
+          "category": "",
+          "condition": 1,
+          "desc": "the best zoomed camera even on smartphone",
+          "price": 20000000,
+          "status": 1,
+          "stock": 100,
+          "specifications": [
+            {
+              "Brand": "Samsung"
+            },
+            {
+              "Warranty": "SEIN"
+            }
+          ]
+        },
+        {
+          "user_id": "",
+          "name": "Figure Marvel Spiderman 2099",
+          "category": "hoby.mainan.figure",
+          "condition": 1,
+          "desc": "Description CT Spiderman 2099",
+          "price": 325000,
+          "status": 1,
+          "stock": 50,
+          "specifications": [
+            {
+              "Usia": 11
+            },
+            {
+              "Tema": "Fantasy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
